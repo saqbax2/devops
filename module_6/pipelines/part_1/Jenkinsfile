@@ -29,13 +29,16 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 12.22.3') {
-                    sh '''                    npx sonar-scanner \
-                    -Dsonar.host.url=http://vm-devops-sura-sonarqube-dgomezg3-dev.southcentralus.cloudapp.azure.com/ \                    
+                    sh '''                    
+                    npx sonar-scanner \
+                    -Dsonar.host.url=http://vm-devops-sura-sonarqube-nsantiagog-dev.southcentralus.cloudapp.azure.com/ \                    
                     -Dsonar.login=$ToA \
                     -Dsonar.sources=./fe-devops-sura-dgomezg3-dev \
                     -Dsonar.exclusions=./fe-devops-sura-dgomezg3-dev/node_modules \
                     -Dsonar.projectName=DevOps \
-                    -Dsonar.projectKey=DevOps                    '''                }
+                    -Dsonar.projectKey=DevOps                    
+                    '''                
+                }
             }
         }
         stage('Build') { 
