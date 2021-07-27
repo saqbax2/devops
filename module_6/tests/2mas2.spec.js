@@ -19,6 +19,7 @@ describe('2mas2', function() {
     .withCapabilities(capabilities)
     .setChromeOptions()
     .build()
+  })
   afterEach(async function() {
     await driver.quit();
   })
