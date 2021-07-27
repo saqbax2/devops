@@ -10,6 +10,6 @@ const resta = require("./index")
 test(
   "0" ,
   ()=>{
-    expect (plus(2,2)).toBe(0)
+    expect (resta(2,2)).toBe(0)
   }
 );
